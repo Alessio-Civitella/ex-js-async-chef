@@ -25,9 +25,9 @@ const getChefBirthday = async (id) => {
         if (!response2.ok) throw new Error("Errore nel recupero dello chef");
         
         const user = await response2.json();
-        if (!user.birthday) throw new Error("Data di nascita non disponibile");
+        if (!user.birthDate) throw new Error("Data di nascita non disponibile");
         
-        return user.birthday;
+        return user.birthDate;
     } catch (error) {
         console.error("Errore:", error.message);
         return null;
